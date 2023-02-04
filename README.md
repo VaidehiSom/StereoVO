@@ -1,5 +1,6 @@
 # Stereo Visual Odometry using Kitty Dataset
-
+<!-- token: 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
+add this to sheets -->
 ## Running the code
 ### Build the file using
 ```
@@ -9,7 +10,7 @@ cd build
 cmake ..
 make
 ```
-### Then to run on BAL the dataset given in problem-16-22106-pre.txt
+### Then to run on KITTY dataset
 
 ```
 cd ~/ws
