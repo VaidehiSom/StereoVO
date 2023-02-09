@@ -12,6 +12,9 @@ namespace myslam {
  * @brief map
  * Interaction with the map: the front end calls InsertKeyframe and InsertMapPoint to insert new frames and map points, 
  * the back end maintains the structure of the map, determines outlier/elimination, etc
+ * The map stores all keyframes and corresponding landmarks in a hash form and 
+ * maintains an activated keyframe and map point set. 
+ * Here the concept of activation is what we call the sliding window before.
  */
 class Map {
    public:
@@ -50,7 +53,7 @@ class Map {
         return active_keyframes_;
     }
 
-    /// Clear the points in the map where the number of observations is zero
+    /// Clear the points in the map where the number of observations is zero //! wtf is this
     void CleanMap();
 
    private:
@@ -61,7 +64,7 @@ class Map {
     LandmarksType landmarks_;         // all landmarks
     LandmarksType active_landmarks_;  // active landmarks
     KeyframesType keyframes_;         // all key-frames
-    KeyframesType active_keyframes_;  // all key-frames
+    KeyframesType active_keyframes_;  // active key-frames
 
     Frame::Ptr current_frame_ = nullptr;
 

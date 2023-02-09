@@ -322,7 +322,9 @@ int Frontend::FindFeaturesInRight() {
         }
     }
 
-    std::vector<uchar> status;
+    std::vector<uchar> status; // output status vector (of unsigned chars); 
+                               // each element of the vector is set to 1 if the flow for the corresponding features has been found, 
+                               // otherwise, it is set to 0.
     Mat error;
     cv::calcOpticalFlowPyrLK(
         current_frame_->left_img_, current_frame_->right_img_, kps_left,
@@ -336,7 +338,7 @@ int Frontend::FindFeaturesInRight() {
         if (status[i]) {
             cv::KeyPoint kp(kps_right[i], 7);
             Feature::Ptr feat(new Feature(current_frame_, kp));
-            feat->is_on_left_image_ = false;
+            feat->is_on_left_image_ = false; //! ??
             current_frame_->features_right_.push_back(feat);
             num_good_pts++;
         } else {

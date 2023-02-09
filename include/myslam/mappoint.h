@@ -14,6 +14,7 @@ struct Feature;
  * Waypoint class
  * Feature points form landmark points after triangulation
  */
+
 struct MapPoint {
    public:
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
@@ -23,7 +24,7 @@ struct MapPoint {
     Vec3 pos_ = Vec3::Zero();  // Position in world
     std::mutex data_mutex_;
     int observed_times_ = 0;  // being observed by feature matching algo.
-    std::list<std::weak_ptr<Feature>> observations_;
+    std::list<std::weak_ptr<Feature>> observations_; // records the features that observed this map point
 
     MapPoint() {}
 

@@ -15,7 +15,13 @@ struct Feature;
 /**
  * frame
  * Each frame is assigned an independent id, and the key frame is assigned a key frame ID
+ * Frame struct contains id, pose, image, and features in the left and right images
+ * The pose will be set or accessed by the front and backends simultaneously, 
+ * So we define its set and get functions and lock the data in them. 
+ * Meanwhile, a frame can be constructed by a static function, 
+ * and we can automatically set its id in the static create function.
  */
+
 struct Frame {
    public:
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
