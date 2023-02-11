@@ -1,4 +1,4 @@
-# Stereo Visual Odometry using Kitty Dataset
+# Stereo Visual Odometry using Kitti Dataset
 
 ## Running the code
 ### Build the file using
@@ -9,7 +9,7 @@ cd build
 cmake ..
 make
 ```
-### Then to run on KITTY dataset
+### Then to run on KITTI dataset
 
 ```
 cd ~/ws
