@@ -1,5 +1,29 @@
 # Stereo Visual Odometry using Kitti Dataset
 
+## Decisions 
+
+## Concepts used
+1. Optical flow
+2. DFTT
+3. Multi-threading, mutex locks
+
+## Edge cases taken care of
+1. Max active keyframes are taken to be 7. If active keyframes < 7, this has been taken care of.
+
+## Edge cases not taken care of
+1. Brightness not constant
+2. Lost tracking, reset function is not implemented
+
+## Scope of improvements
+1. Compare with other open source libraries
+2. I used GFTT as feature detector. This is not fast. Can use ORB, SIFT etc
+3. Taking care of edge cases, like changing brightness, lost tracking
+4. Used direct method for estimating pose and features for faster computation. Can compare with other techniques like OpticalFlow
+5. Can use pose graph instead of BA
+6. Add ways to quantify results
+7. Include features in major pipeline
+8. C++
+
 ## Running the code
 ### Build the file using
 ```

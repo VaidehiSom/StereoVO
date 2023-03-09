@@ -51,6 +51,7 @@ void Backend::Optimize(Map::KeyframesType &keyframes,
     std::map<unsigned long, VertexPose *> vertices;
     unsigned long max_kf_id = 0;
     for (auto &keyframe : keyframes) {
+        // adding {keyframe id, keyfram pose} to optimizer addVertex
         auto kf = keyframe.second;
         VertexPose *vertex_pose = new VertexPose();  // camera vertex_pose
         vertex_pose->setId(kf->keyframe_id_);
@@ -59,7 +60,7 @@ void Backend::Optimize(Map::KeyframesType &keyframes,
         if (kf->keyframe_id_ > max_kf_id) {
             max_kf_id = kf->keyframe_id_;
         }
-
+        // inserting all {keyframe id, keyfram pose} in map
         vertices.insert({kf->keyframe_id_, vertex_pose});
     }
 

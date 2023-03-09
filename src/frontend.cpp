@@ -338,7 +338,7 @@ int Frontend::FindFeaturesInRight() {
         if (status[i]) {
             cv::KeyPoint kp(kps_right[i], 7);
             Feature::Ptr feat(new Feature(current_frame_, kp));
-            feat->is_on_left_image_ = false; //! ??
+            feat->is_on_left_image_ = false;
             current_frame_->features_right_.push_back(feat);
             num_good_pts++;
         } else {
