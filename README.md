@@ -4,7 +4,7 @@
 
 ## Concepts used
 1. Optical flow
-2. DFTT
+2. GFTT
 3. Multi-threading, mutex locks
 
 ## Edge cases taken care of
